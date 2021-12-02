@@ -1,0 +1,21 @@
+/* ==========================================================================
+  	General
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+}
+
+html {
+  overflow: hidden;
+}
+
+.v-main {
+  overflow-y: auto;
+  height: calc(100vh - 48px);
+  //margin-top: 48px;
+  background: var(--v-background-base);
+}

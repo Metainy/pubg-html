@@ -1,0 +1,32 @@
+/* ==========================================================================
+  	Navigation Drawer
+   ========================================================================== */
+
+.v-navigation-drawer {
+  background: var(--v-sideNav-base)!important;
+  //background: linear-gradient(to top, var(--v-sideNav-base) 30%, var(--v-sideNav-lighten1) 65%)!important;
+
+  .v-divider {
+    opacity: .6;
+  }
+
+  .v-list-item__avatar {
+    opacity: .7;
+  }
+}
+
+::v-deep .v-list-group--active .v-list-item__icon.v-list-group__header__prepend-icon .v-icon {
+  transform: rotate(-180deg);
+}
+
+.customNav {
+  background: transparent;
+}
+
+.customNav .v-icon, .customNav .v-list-item__title {
+  color: var(--v-primary-base);
+}
+
+.v-list-item--active:before, .v-list-item--active:hover:before, .v-list-item:focus:before {
+  opacity: .10 !important;
+}

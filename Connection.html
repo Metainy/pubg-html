@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PUBG HTML</title>
+</head>
+
+<body>
+
+<h1 id="mainTxt"></h1>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js"></script>
+<script>
+
+    // Elements
+    const mainTxt = document.querySelector("#mainTxt")
+
+    // Socket connections
+    const socket = io.connect("http://localhost:4114/pubg-html");
+
+    /**
+     * Fires when a connection is made with the server.
+     */
+    socket.on("connect", () => console.log("Connected on PickBans"));
+
+    socket.on("TopFraggers", (data) => {
+        console.log(data);
+    });
+
+    socket.on("TopFraggers:reset", (data) => {
+        console.log("reset", data);
+    });
+
+</script>
+
+</body>
+</html>

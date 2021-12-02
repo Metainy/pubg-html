@@ -1,0 +1,16 @@
+/* ==========================================================================
+  	V-Text-Field
+   ========================================================================== */
+
+.v-text-field--outlined {
+  border-radius: 2px !important;
+}
+
+.v-text-field--outlined fieldset {
+
+  transition-property: none !important;
+}
+
+.v-input:not(.v-input--is-disabled) input {
+  color: var(--v-lightText-base) !important;
+}

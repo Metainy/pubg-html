@@ -1,0 +1,25 @@
+/* ==========================================================================
+  	Scrollbar
+   ========================================================================== */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--v-darkBackground-darken1);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--v-darkBackground-base);
+}

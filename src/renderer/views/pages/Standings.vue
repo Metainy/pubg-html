@@ -29,7 +29,7 @@
               </v-col>
 
               <v-col cols="12" class="mb-6">
-                <ImageBrowse title="Team Logo" v-model="team.logo"></ImageBrowse>
+                <ImageBrowse title="Team Logo" v-model="team.teamLogo"></ImageBrowse>
               </v-col>
 
               <v-col cols="12">

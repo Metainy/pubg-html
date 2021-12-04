@@ -68,7 +68,7 @@ export default {
   mixins: [staticTab],
 
   data: () => ({
-    maps: ["Map One", "Map Two", "Map Three", "Map Four"],
+    maps: ["Erangel", "Miramar", "Vikendi", "Sanhok"],
     formData: [
       {map: "", played: false, winner: "", nextMap: false},
       {map: "", played: false, winner: "", nextMap: false},

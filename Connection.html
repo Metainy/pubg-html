@@ -33,6 +33,14 @@
         console.log("reset", data);
     });
 
+    socket.on("InGameStats:intro", (data) => {
+        console.log("Intro", data);
+    });
+
+    socket.on("InGameStats:outro", (data) => {
+        console.log("Outro", data);
+    });
+
 </script>
 
 </body>

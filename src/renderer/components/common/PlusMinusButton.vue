@@ -3,7 +3,7 @@
   <v-row no-gutters>
 
     <!-- Label -->
-    <v-col cols="12" class="secondaryText--text text-button">{{ label }}</v-col>
+    <v-col cols="12"  class="secondaryText--text text-button">{{ label }}</v-col>
 
     <!-- Plus Button -->
     <v-col cols="auto">
@@ -14,8 +14,7 @@
 
     <!-- Value -->
     <v-col cols="auto" class="d-flex align-center justify-center btnValue">
-      <input type="text" class="lightText--text text-center" width="10" v-model="value">
-<!--      <v-text-field dense outlined :value="value"></v-text-field>-->
+      <input type="number" class="lightText--text text-center" style="width: 80px;" :value="this.number" @input="inputHandler">
 <!--      <div class="secondaryText&#45;&#45;text body-1">{{ value }}</div>-->
     </v-col>
 
@@ -41,29 +40,49 @@ export default {
     label: {default: null, type: String},
   },
 
+  data: () => ({
+    number: null
+  }),
+
   methods: {
 
     increase() {
 
       // Return if the new value is higher than the max
-      if ((this.value + 1) > this.max) return;
+      if ((this.number + 1) > this.max) return;
 
-      ++this.value;
+      ++this.number;
 
-      this.$emit("input", this.value);
-      this.$emit("increase", this.value);
+      this.$emit("input", this.number);
+      this.$emit("increase", this.number);
     },
 
     decrease() {
 
       // Return if the new value is lower than the min
-      if ((this.value - 1) < this.min) return;
+      if ((this.number - 1) < this.min) return;
 
-      --this.value;
+      --this.number;
 
-      this.$emit("input", this.value);
-      this.$emit("decrease", this.value);
+      this.$emit("input", this.number);
+      this.$emit("decrease", this.number);
+    },
+
+    inputHandler(event, d) {
+
+      // Get the value
+      this.number = parseInt(event.target.value);
+
+      // Check for valid number
+      if (this.number > this.max) this.number = this.max;
+      if (this.number < this.min) this.number = this.min;
+
+      this.$emit("input", this.number);
     }
+  },
+
+  created() {
+    this.number = this.value;
   }
 }
 
@@ -75,6 +94,17 @@ export default {
 
   border: solid 1px var(--v-primary-base);
   min-width: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus-visible {
+
+  outline: none;
 }
 
 </style>

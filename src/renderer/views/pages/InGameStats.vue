@@ -12,6 +12,7 @@
 
     <!-- Page Content -->
     <v-row>
+
       <v-col cols="12" lg="6" v-for="(team, index) in formData" :key="index">
 
         <v-card outlined>
@@ -20,6 +21,7 @@
           <v-toolbar flat dense color="darkBackground" class="text-button lightText--text">
             {{ stringifyNumber(index) }} Team
           </v-toolbar>
+
           <!-- Card Content -->
           <v-card-text>
             <v-row dense>
@@ -40,6 +42,7 @@
                 <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Alive"
                               v-model="team.alive">
                 </v-text-field>
+                <!--                <PlusMinusButton v-model="num" label="Alive" :min="0" :max="4"></PlusMinusButton>-->
               </v-col>
 
             </v-row>
@@ -70,6 +73,7 @@ export default {
   mixins: [staticTab],
 
   data: () => ({
+    num: 0,
     formData: [
       {teamName: "", totalKills: "", alive: ""},
       {teamName: "", totalKills: "", alive: ""},
@@ -97,6 +101,8 @@ export default {
      */
     reset() {
 
+      console.log(this.num);
+      return;
       // Reset page inputs
       this.formData = [
         {teamName: "", totalKills: "", alive: ""},

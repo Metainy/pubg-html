@@ -27,7 +27,7 @@ const navItems = [
         name: "Prediction",
         title: "Prediction",
         icon: "mdi-format-list-bulleted",
-        enabled: true,
+        enabled: false,
     },
     {
         path: "/standings",

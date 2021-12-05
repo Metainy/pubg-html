@@ -52,8 +52,8 @@ const options = {
                 foreground: "#2B2B2B",
 
                 lightText: "#cecece",
-                darkText: "#cecece",
-                contrastText: "#222831",
+                darkText: "#a6a6a6",
+                contrastText: "#424242",
 
                 primary: "#C78014",
                 secondary: "#424242",

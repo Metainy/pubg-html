@@ -50,7 +50,14 @@ const navItems = [
         icon: "mdi-format-list-bulleted",
         enabled: true,
     },
-    {divider: false},
+    {divider: true},
+    {
+        path: "/card-game",
+        name: "CardGame",
+        title: "Card Game",
+        icon: "mdi-format-list-bulleted",
+        enabled: true,
+    },
 ];
 
 export default navItems;

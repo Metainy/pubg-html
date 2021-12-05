@@ -14,3 +14,9 @@
 .v-input:not(.v-input--is-disabled) input {
   color: var(--v-lightText-base) !important;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

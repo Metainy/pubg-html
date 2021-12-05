@@ -172,7 +172,7 @@ const actions = {
         });
 
         // Listen for download progress
-        window.api.receive("download-progress", (event, downloadData) => {
+        window.api.receive("downloadProgress", (event, downloadData) => {
 
             // Download already starting
             commit("setUpdateDownloading", true);

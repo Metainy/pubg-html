@@ -28,7 +28,8 @@ contextBridge.exposeInMainWorld("api", {
 
         let validChannels = [
             "fromMain", "clientsCount", "serverStatus",
-            "updateAvailable", "downloadProgress", "updateDownloaded"
+            "updateAvailable", "downloadProgress", "updateDownloaded",
+            "cardGameMatched"
         ];
 
         if (validChannels.includes(channel)) {

@@ -30,6 +30,13 @@ function init(mainWindow, IO) {
         // Send notification to renderer
         sendCountToRenderer();
 
+        // Listen to Card Game event
+        socket.on("CardGame:matched", (payload) => {
+
+            // Forward the incoming data to the renderer
+            mainWindow.webContents.send("cardGameMatched", payload);
+        });
+
         socket.on("disconnect", (reason) => {
 
             if (clientsCount > 0) clientsCount--;

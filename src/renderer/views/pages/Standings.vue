@@ -40,19 +40,19 @@
 
               <v-col>
                 <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="WWCD"
-                              v-model="team.wwcd">
+                              v-model.number="team.wwcd" @change="wwcdChanged($event, index)">
                 </v-text-field>
               </v-col>
 
               <v-col>
                 <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Kill Points"
-                              v-model="team.killPoints">
+                              v-model.number="team.killPoints" @change="killsChanged($event, index)">
                 </v-text-field>
               </v-col>
 
               <v-col>
                 <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Total Points"
-                              v-model="team.totalPoints">
+                              v-model.number="team.totalPoints">
                 </v-text-field>
               </v-col>
 
@@ -85,22 +85,22 @@ export default {
 
   data: () => ({
     formData: [
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-      {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""}
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+      {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null}
     ]
   }),
 
@@ -113,26 +113,36 @@ export default {
 
       // Reset page inputs
       this.formData = [
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""},
-        {rank: "", teamLogo: "", teamName: "", wwcd: "", killPoints: "", totalPoints: ""}
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null},
+        {rank: "", teamLogo: "", teamName: "", wwcd: null, killPoints: null, totalPoints: null}
       ];
 
       // Emit a reset event
       this.sendToServer("reset");
+    },
+
+    killsChanged(value, index) {
+
+      this.formData[index].totalPoints = value + this.formData[index].wwcd;
+    },
+
+    wwcdChanged(value, index) {
+
+      this.formData[index].totalPoints = value + this.formData[index].killPoints;
     }
   }
 }

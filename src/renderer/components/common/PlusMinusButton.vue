@@ -68,7 +68,7 @@ export default {
       this.$emit("decrease", this.number);
     },
 
-    inputHandler(event, d) {
+    inputHandler(event) {
 
       // Get the value
       this.number = parseInt(event.target.value);

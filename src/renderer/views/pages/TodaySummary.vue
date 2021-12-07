@@ -7,6 +7,37 @@
       <v-btn outlined small color="primary" @click="reset">Reset</v-btn>
     </TabHeader>
 
+
+    <!-- TEST -->
+<!--    <v-row>-->
+
+
+<!--      <v-col>-->
+
+
+<!--        <TextField-->
+<!--            label="dsa" hint="HELLOD" type="number"-->
+<!--        >-->
+
+
+
+<!--        </TextField>-->
+
+<!--        <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Team Name">-->
+<!--        </v-text-field>-->
+
+<!--        <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Team Name"-->
+<!--                      >-->
+<!--        </v-text-field>-->
+
+<!--      </v-col>-->
+<!--    </v-row>-->
+
+
+
+
+
+
     <!-- Page Content -->
     <v-row>
       <v-col cols="12" lg="6" v-for="(team, index) in formData" :key="index">
@@ -60,13 +91,16 @@
 import TabHeader from "@components/common/TabHeader";
 import ImageBrowse from "@components/common/ImageBrowse";
 
+// import TextField from "@components/common/TextField";
+
+
 // Mixins
 import {staticTab} from "@/mixins/staticTab";
 
 export default {
   name: "TodaySummary",
 
-  components: {TabHeader, ImageBrowse},
+  components: {TabHeader, ImageBrowse, TextField},
 
   mixins: [staticTab],
 

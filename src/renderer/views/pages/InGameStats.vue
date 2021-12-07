@@ -24,25 +24,29 @@
 
           <!-- Card Content -->
           <v-card-text>
-            <v-row dense>
+            <v-row>
 
               <v-col>
                 <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Team Name"
-                              v-model="team.teamName">
+                              v-model="team.teamName" hide-details>
                 </v-text-field>
               </v-col>
 
               <v-col>
-                <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Total Kills"
-                              v-model="team.totalKills">
-                </v-text-field>
+                <PlusMinusButton label="Total Kills" v-model="team.totalKills"> </PlusMinusButton>
               </v-col>
 
-              <v-col>
-                <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Alive"
-                              v-model="team.alive">
-                </v-text-field>
-                <!--                <PlusMinusButton v-model="num" label="Alive" :min="0" :max="4"></PlusMinusButton>-->
+              <v-col cols="12">
+
+                <v-input dense label="Alive" hide-details>
+
+                  <v-switch :ripple="false" class="ml-5" v-model="team.alive[0]"></v-switch>
+                  <v-switch :ripple="false" class="ml-5" v-model="team.alive[1]"></v-switch>
+                  <v-switch :ripple="false" class="ml-5" v-model="team.alive[2]"></v-switch>
+                  <v-switch :ripple="false" class="ml-5" v-model="team.alive[3]"></v-switch>
+
+                </v-input>
+
               </v-col>
 
             </v-row>
@@ -75,22 +79,22 @@ export default {
   data: () => ({
     num: 0,
     formData: [
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""},
-      {teamName: "", totalKills: "", alive: ""}
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+      {teamName: "", totalKills: 0, alive: [true, true, true, true]}
     ]
   }),
 
@@ -105,22 +109,22 @@ export default {
       return;
       // Reset page inputs
       this.formData = [
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""},
-        {teamName: "", totalKills: "", alive: ""}
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]},
+        {teamName: "", totalKills: 0, alive: [true, true, true, true]}
       ];
 
       // Emit a reset event

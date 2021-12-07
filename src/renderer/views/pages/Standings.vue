@@ -40,13 +40,13 @@
 
               <v-col>
                 <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="WWCD"
-                              v-model.number="team.wwcd" @change="wwcdChanged($event, index)">
+                              v-model.number="team.wwcd">
                 </v-text-field>
               </v-col>
 
               <v-col>
                 <v-text-field outlined dense prepend-inner-icon="mdi-pencil-outline" label="Kill Points"
-                              v-model.number="team.killPoints" @change="killsChanged($event, index)">
+                              v-model.number="team.killPoints">
                 </v-text-field>
               </v-col>
 

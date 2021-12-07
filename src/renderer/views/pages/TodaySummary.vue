@@ -100,7 +100,7 @@ import {staticTab} from "@/mixins/staticTab";
 export default {
   name: "TodaySummary",
 
-  components: {TabHeader, ImageBrowse, TextField},
+  components: {TabHeader, ImageBrowse},
 
   mixins: [staticTab],
 

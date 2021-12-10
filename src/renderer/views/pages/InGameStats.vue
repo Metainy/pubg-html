@@ -105,8 +105,6 @@ export default {
      */
     reset() {
 
-      console.log(this.num);
-      return;
       // Reset page inputs
       this.formData = [
         {teamName: "", totalKills: 0, alive: [true, true, true, true]},

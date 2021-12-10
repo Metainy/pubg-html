@@ -10,8 +10,13 @@ let config = new Store({
         miniDrawer: false,
         windowBounds: {},
         server: {
-            port: 4114,
+            port: 4124,
             namespace: "pubg-html"
+        }
+    },
+    migrations: {
+        ">=0.1.6": config => {
+            config.set("server.port", 4124);
         }
     }
 });
@@ -39,6 +44,14 @@ function getValue(key) {
 }
 
 /**
+ * Reset all keys to the default values.
+ */
+function resetAll() {
+
+    config.clear();
+}
+
+/**
  * Incoming request from renderer to get a store value.
  */
 ipcMain.handle("Store:get", (event, key) => {
@@ -56,5 +69,6 @@ ipcMain.handle("Store:set", (event, key, value) => {
 
 export default {
     setValue,
-    getValue
+    getValue,
+    resetAll
 }

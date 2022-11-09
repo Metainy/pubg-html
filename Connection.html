@@ -45,6 +45,22 @@
         console.log("newGame", data);
     });
 
+    function add (x, y) {
+
+        console.log(x + y);
+    }
+
+
+
+    let result = add(45, 5) // works
+    let result2 = add("45", 5);
+
+    let a = 45;
+    let b = "45";
+
+    console.log(b == a) // ??? WHY
+    console.log(b === a)
+
 </script>
 
 </body>

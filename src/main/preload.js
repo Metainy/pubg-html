@@ -15,7 +15,7 @@ contextBridge.exposeInMainWorld("api", {
     // Send to main process
     send: (channel, data) => {
 
-        // whitelist channels
+        // Allowed channels
         let validChannels = ["toMain", "tabData", "downloadUpdates", "installUpdates"];
 
         if (validChannels.includes(channel)) {
@@ -26,6 +26,7 @@ contextBridge.exposeInMainWorld("api", {
     // Receive any message from main process
     receive: (channel, func) => {
 
+        // Allowed channels
         let validChannels = [
             "fromMain", "clientsCount", "serverStatus",
             "updateAvailable", "downloadProgress", "updateDownloaded",

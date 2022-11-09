@@ -30,7 +30,6 @@ const windowOptions = {
 
 class MainWindow extends BrowserWindow {
 
-
     constructor() {
 
         super(windowOptions);
@@ -45,7 +44,7 @@ class MainWindow extends BrowserWindow {
             createProtocol("app");
 
             // Load the index file when not in development
-            this.loadURL("app://./index.html")
+            this.loadURL("app://./index.html");
         }
 
         // Gracefully show when ready to prevent flickering

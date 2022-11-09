@@ -33,7 +33,7 @@
               </v-col>
 
               <v-col>
-                <PlusMinusButton label="Total Kills" v-model="team.totalKills"> </PlusMinusButton>
+                <PlusMinusButton label="Total Kills" v-model="team.totalKills"></PlusMinusButton>
               </v-col>
 
               <v-col cols="12">
